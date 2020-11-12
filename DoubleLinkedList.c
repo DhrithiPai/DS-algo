@@ -123,7 +123,7 @@ key * insertafter(key * tail)
         n++;
         
     }
-    return head;
+    return tail;
     
 }
 
@@ -219,6 +219,7 @@ int main()
                     if(sptr==head)
                     {
                         head=head->next;
+                        head->prev=NULL;
                         free(sptr);
                         n--;
                     }
