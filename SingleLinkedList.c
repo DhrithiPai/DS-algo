@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include<stdlib.h>
+#include<string.h>
 typedef struct store
 {
     
@@ -82,15 +81,16 @@ store * insertbefore(store * head)
     printf("enter name of element before which u want to insert : ");
     scanf("%s", name);
     sptr=search(head,name);
-    if(sptr==head)
+    if(sptr==NULL)
+    {
+        printf("Item %s not present \n",name);
+    }
+    else if(sptr==head)
     {
         head=insertbegin(head);
         
     }
-    else if(sptr==NULL)
-    {
-        printf("Item %s not present",name);
-    }
+    
     else
     {
         
@@ -117,14 +117,16 @@ store * insertafter(store * head, store *tail)
     printf("enter name of element after which u want to insert : ");
     scanf("%s", name);
     sptr=search(head,name);
-    if(sptr==tail)
+    
+    if(sptr==NULL)
+    {
+        printf("Item %s not present \n ",name);
+    }
+    else if(sptr==tail)
     {
         tail=insertend(tail);
     }
-    else if(sptr==NULL)
-    {
-        printf("Item %s not present",name);
-    }
+    
     else
     {
         store * new = create (sptr->next);
