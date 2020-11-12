@@ -296,7 +296,14 @@ int main() {
                 printf("enter element to be searched : ");
                 scanf("%s", name );
                 sptr=search(head,name);
-                printf("price of %s is %d \n ", name , sptr->a);
+                if(sptr==NULL)
+                {
+                    printf("Item %s not present\n" , name);
+                }
+                else
+                {
+                    printf("price of %s is %d \n ", name , sptr->a);
+                }
                     
             }
                 break;
